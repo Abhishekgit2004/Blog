@@ -56,7 +56,7 @@ const Navbar = () => {
           sx={{
             display: { md: "none", xs: "flex" },
             bgcolor: "#0c344f",
-            gap: 5,
+            gap: 2,
             color: "white",
             width: "100%",
             position: "fixed",
@@ -65,12 +65,39 @@ const Navbar = () => {
             transition: "transform 0.3s ease-in-out",
             transform: open ? "translateX(0)" : "translateX(100%)",
             zIndex: "999",
+            alignItems:"center",
+            padding:"10px"
           }}
         >
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Profile</Button>
-          <Button color="inherit">Contact</Button>
-          <Button color="contained">Login</Button>
+          <Link to={"/home"}>
+            {" "}
+            <Button color="inherit" sx={{color:"white"}}>Home</Button>
+          </Link>
+          <Link to={"/profile"}>
+            <Button color="inherit" sx={{color:"white"}}>Profile</Button>
+          </Link>
+          <Link to={"/contact"}>
+            {" "}
+            <Button  color="inherit" sx={{color:"white"}}>Contact</Button>
+          </Link>
+
+            <Link to={"/sigup"}>
+            <Button
+              color="inherit"
+              sx={{ bgcolor: "white", color: "black", fontWeight: "700" }}
+            >
+              sigup
+            </Button>
+          </Link>
+
+          <Link to={"/login"}>
+            <Button
+              color="inherit"
+              sx={{ bgcolor: "white", color: "black", fontWeight: "700" }}
+            >
+              Login
+            </Button>
+          </Link>
         </Box>
         <Box
           sx={{
