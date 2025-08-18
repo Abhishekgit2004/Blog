@@ -42,9 +42,9 @@
           <Box
             component={"form"}
             onSubmit={getLoginUser}
-            bgcolor={"transparent"}
+            bgcolor={"rgba(0,0,0,0.6)"}
             sx={{
-              height: "90%",
+              height: "80%",
               width: { xs: "90%", md: "30%",sm:"70%" },
             border: "2px solid #f9f9f9",
       borderRadius: 10,
@@ -62,28 +62,38 @@
 
               <TextField
           
-            sx={{
-              width:"90%",
-      "& .MuiOutlinedInput-root": {
-        "& fieldset": { borderColor: "white", borderRadius:5, },          // default border
-        "&:hover fieldset": { borderColor: "#00ffcc" },  // hover border
-        "&.Mui-focused fieldset": { 
-          borderColor: "#00ffcc",                        // focus border
-          boxShadow: "0 0 8px #00ffcc"     ,
+       sx={{
             
-                        // glow effect
-        },
+            width:"90%",
+    "& .MuiOutlinedInput-root": {
+        backgroundColor: "transparent",
+      "& fieldset": { borderColor: "white", borderRadius:5, },          // default border
+      "&:hover fieldset": { borderColor: "#00ffcc" },  // hover border
+      "&.Mui-focused fieldset": { 
+        borderColor: "#00ffcc",                        // focus border
+        boxShadow: "0 0 8px #00ffcc"     ,
+           
+                      // glow effect
       },
-      input: { color: "white" }, // input text color
-    }}
-              
-              id="outlined-basic"
-              label="Enter Your Username"
-              variant="outlined"
-              xs="small"
-                InputLabelProps={{
-      style: { color: "white" }, // 👈 label color white
-    }}
+       "& input:-webkit-autofill": {
+       WebkitBoxShadow: "0 0 0 1000px transparent inset !important", // clear bg
+        WebkitTextFillColor: "white !important", // text white
+        backgroundColor: "transparent !important", // enforce transparent
+        transition: "background-color 9999s ease-in-out 0s", // trick Chrome
+        caretColor: "white",
+      },
+    },
+    input: { color: "white" }, // input text color
+  }}
+            
+            id="outlined-basic"
+            label="Enter Your password"
+            variant="outlined"
+            xs="small"
+              InputLabelProps={{
+    style: { color: "white" }, // 👈 label color white
+  }}
+
     value={username}
     onChange={(e)=>setUsername(e.target.value)}
             />
@@ -91,28 +101,37 @@
         
               <TextField
           
-            sx={{
-              width:"90%",
-      "& .MuiOutlinedInput-root": {
-        "& fieldset": { borderColor: "white", borderRadius:5, },          // default border
-        "&:hover fieldset": { borderColor: "#00ffcc" },  // hover border
-        "&.Mui-focused fieldset": { 
-          borderColor: "#00ffcc",                        // focus border
-          boxShadow: "0 0 8px #00ffcc"     ,
+               sx={{
             
-                        // glow effect
-        },
+            width:"90%",
+    "& .MuiOutlinedInput-root": {
+        backgroundColor: "transparent",
+      "& fieldset": { borderColor: "white", borderRadius:5, },          // default border
+      "&:hover fieldset": { borderColor: "#00ffcc" },  // hover border
+      "&.Mui-focused fieldset": { 
+        borderColor: "#00ffcc",                        // focus border
+        boxShadow: "0 0 8px #00ffcc"     ,
+           
+                      // glow effect
       },
-      input: { color: "white" }, // input text color
-    }}
-              
-              id="outlined-basic"
-              label="Enter Your Password"
-              variant="outlined"
-              xs="small"
-                InputLabelProps={{
-      style: { color: "white" }, // 👈 label color white
-    }}
+       "& input:-webkit-autofill": {
+       WebkitBoxShadow: "0 0 0 1000px transparent inset !important", // clear bg
+        WebkitTextFillColor: "white !important", // text white
+        backgroundColor: "transparent !important", // enforce transparent
+        transition: "background-color 9999s ease-in-out 0s", // trick Chrome
+        caretColor: "white",
+      },
+    },
+    input: { color: "white" }, // input text color
+  }}
+            
+            id="outlined-basic"
+            label="Enter Your password"
+            variant="outlined"
+            xs="small"
+              InputLabelProps={{
+    style: { color: "white" }, // 👈 label color white
+  }}
 
       value={password}
     onChange={(e)=>setPassword(e.target.value)}
