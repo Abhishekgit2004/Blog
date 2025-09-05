@@ -26,11 +26,12 @@
 
         <Box
           sx={{
+        
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
 
-            height: "90vh",
+             height: "100vh",
             // marginTop: "69.5px",
             backgroundImage:
               "url('https://images.hdqwalls.com/download/house-in-woods-winter-cold-6d-1366x768.jpg')",
@@ -40,6 +41,7 @@
           }}
         >
           <Box
+          marginTop="80px"
             component={"form"}
             onSubmit={getLoginUser}
             bgcolor={"rgba(0,0,0,0.6)"}
@@ -87,7 +89,7 @@
   }}
             
             id="outlined-basic"
-            label="Enter Your password"
+            label="Enter Your Email"
             variant="outlined"
             xs="small"
               InputLabelProps={{

@@ -1,4 +1,4 @@
-import { Box, Button, emphasize, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Authantiction } from "../../Services/Authantiction";
@@ -12,7 +12,7 @@ const Signup = () => {
   const getRegister=async(e)=>{
       e.preventDefault()
       try {
-        const response= await Authantiction.getRegisterUser(name,email,password)
+        const response= await Authantiction.CreatetRegisterUser(name,email,password)
         console.log(response)
          if (response?.status === 200 ) {
         navigate("/");
@@ -26,11 +26,12 @@ const Signup = () => {
     <>
       <Box
         sx={{
+         
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
 
-          height: "90vh",
+          height: "100vh",
           // marginTop: "69.5px",
           backgroundImage:
             "url('https://images.hdqwalls.com/download/house-in-woods-winter-cold-6d-1366x768.jpg')",
@@ -44,6 +45,7 @@ const Signup = () => {
           component={"form"}
           bgcolor={"rgba(0,0,0,0.6)"}
           sx={{
+            marginTop:"80px",
             height: "80%",
             width: { xs: "90%", md: "30%",sm:"70%" },
           border: "2px solid #f9f9f9",
@@ -87,7 +89,7 @@ const Signup = () => {
   }}
             
             id="outlined-basic"
-            label="Enter Your password"
+            label="Enter Your Name"
             variant="outlined"
             xs="small"
               InputLabelProps={{
@@ -123,7 +125,7 @@ const Signup = () => {
   }}
             
             id="outlined-basic"
-            label="Enter Your password"
+            label="Enter Your Email"
             variant="outlined"
             xs="small"
               InputLabelProps={{

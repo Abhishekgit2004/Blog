@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.tshirt-image {
+  max-width: 400px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.upload-section {
+  margin-top: 20px;
+}
+
+.upload-label {
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

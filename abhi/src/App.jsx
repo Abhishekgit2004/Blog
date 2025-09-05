@@ -1,32 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Login from './Pages/Authantication/Login'
-import Navbar from './Pages/Navbar'
-import {BrowserRouter,Route,Router, Routes} from "react-router-dom"
-import Signup from './Pages/Authantication/Signup'
-import Home from './Pages/Home/Home'
-import Profile from './Pages/Home/Profile'
-import Contact from './Pages/Home/Contact'
 
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Profile from "./Pages/MyComponent/Profile";
+import About from './Pages/MyComponent/About';
+import Navbar from "./Pages/MyComponent/Navbar";
+import Home from "./Pages/MyComponent/Home/Home";
+import Login from "./Pages/Authantication/Login";
+import Signup from "./Pages/Authantication/Signup";
+
+const App = () => {
   return (
-    <>
-    <BrowserRouter>
-    <Navbar/>
-    
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/sigup' element={<Signup/>}/>
-      <Route path='/profile' element={<Profile/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-    </Routes>
-    </BrowserRouter>
+   <>
+   <BrowserRouter>
+  <Navbar/>
+  <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/profile" element={<Profile/>}/>
+    <Route path="/about" element={<About/>}/>
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/sigup" element={<Signup/>}/>
+  </Routes>
+  </BrowserRouter>
 
-    </>
+   </>
   )
 }
 
-export default App
+export default App 
