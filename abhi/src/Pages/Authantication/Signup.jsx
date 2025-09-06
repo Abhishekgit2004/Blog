@@ -14,7 +14,7 @@ const Signup = () => {
       try {
         const response= await Authantiction.CreatetRegisterUser(name,email,password)
         console.log(response)
-         if (response?.status === 200 ) {
+         if (response?.status === 201 ) {
         navigate("/");
       }
 
