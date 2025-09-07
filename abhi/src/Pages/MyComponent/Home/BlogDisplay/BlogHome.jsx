@@ -12,6 +12,8 @@ const BlogHome = () => {
   const [data, setData] = React.useState([]);
   const[comment,setComments]=useState([])
   const [openComment,setOpenComment]=useState(false)
+  const [ActiveId,setActiveId]=useState([])
+  
   let Getdata = async () => {
     setopen(true);
     try {
@@ -26,6 +28,9 @@ const BlogHome = () => {
       console.log(error);
     }
   };
+  const handelcomment=(id)=>{
+    setActiveId((prev)=>prev==id?null:id)
+  }
   useEffect(() => {
     Getdata();
   }, []);
@@ -86,11 +91,11 @@ const BlogHome = () => {
                 <p>{item.updatedAt}</p>
                 
                 <Box sx={{display:"flex",gap:"10px"}}>
-               <Button onClick={()=>setOpenComment(!open)}> <MapsUgcRoundedIcon /></Button> <FavoriteBorderRoundedIcon sx={{color:"white"}}/>
+               <Button onClick={()=>handelcomment(item.id)}> <MapsUgcRoundedIcon /></Button> <FavoriteBorderRoundedIcon sx={{color:"white"}}/>
 
-<CommentSection openComment={openComment} comments={comment}/>
-                
                 </Box>
+                              <CommentSection openComment={ActiveId===item.id} comments={item.comments}/>
+
               </Grid>
             ))}
           </Grid>
